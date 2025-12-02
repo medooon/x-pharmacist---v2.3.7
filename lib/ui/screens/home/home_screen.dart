@@ -1193,8 +1193,8 @@ class HomeScreenState extends State<HomeScreen>
     final headerHeight = (context.height * .16).clamp(minHeaderHeight, 160.0);
 
     return Stack(
-      clipBehavior: .none,
-      alignment: .bottomCenter,
+      clipBehavior: Clip.none,
+      alignment: Alignment.bottomCenter,
       children: [
         Container(
           height: context.height * .01,
@@ -1223,14 +1223,14 @@ class HomeScreenState extends State<HomeScreen>
               bottom: Radius.circular(10),
             ),
           ),
-          alignment: .bottomCenter,
+          alignment: Alignment.bottomCenter,
           child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: minContentHeight),
             child: Row(
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    shape: .circle,
+                    shape: BoxShape.circle,
                     border: Border.all(
                       color: context.primaryTextColor.withValues(alpha: .3),
                     ),
@@ -1243,26 +1243,26 @@ class HomeScreenState extends State<HomeScreen>
                 const SizedBox(width: 8),
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: .start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: .center,
                     mainAxisSize: .min,
                     children: [
                       Text(
                         _userName,
-                        textAlign: .start,
+                        textAlign: TextAlign.start,
                         maxLines: 1,
-                        overflow: .ellipsis,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: context.primaryTextColor,
                           fontSize: 18,
-                          fontWeight: .bold,
+                          fontWeight: FontWeights.bold,
                         ),
                       ),
                       Text(
                         context.tr(letsPlay)!,
-                        textAlign: .start,
+                        textAlign: TextAlign.start,
                         maxLines: 1,
-                        overflow: .ellipsis,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: context.primaryTextColor.withValues(alpha: .3),
                           fontSize: 12,
@@ -1281,7 +1281,7 @@ class HomeScreenState extends State<HomeScreen>
                       color: context.primaryColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    alignment: .center,
+                    alignment: Alignment.center,
                     child: _isGuest
                         ? Icon(
                             Icons.login_rounded,
@@ -1293,7 +1293,7 @@ class HomeScreenState extends State<HomeScreen>
                             color: context.surfaceColor,
                             height: 20,
                             width: 20,
-                            fit: .contain,
+                            fit: BoxFit.contain,,
                           ),
                   ),
                 ),
@@ -1308,13 +1308,13 @@ class HomeScreenState extends State<HomeScreen>
                         color: context.primaryColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      alignment: .center,
+                      alignment: Alignment.center,
                       child: QImage(
                         imageUrl: Assets.coinMenuIcon,
                         color: context.surfaceColor,
                         height: 20,
                         width: 20,
-                        fit: .contain,
+                        fit: BoxFit.contain,,
                       ),
                     ),
                   ),
