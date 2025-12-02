@@ -17,8 +17,10 @@ import 'package:flutterquiz/ui/screens/battle/multi_user_battle_room_quiz_screen
 import 'package:flutterquiz/ui/screens/battle/multi_user_battle_room_result_screen.dart';
 import 'package:flutterquiz/ui/screens/battle/random_battle_screen.dart';
 import 'package:flutterquiz/ui/screens/bookmark_screen.dart';
+
 import 'package:flutterquiz/ui/screens/exam/exam_screen.dart';
 import 'package:flutterquiz/ui/screens/exam/exams_screen.dart';
+
 import 'package:flutterquiz/ui/screens/inapp_coin_store_screen.dart';
 import 'package:flutterquiz/ui/screens/initial_language_selection_screen.dart';
 import 'package:flutterquiz/ui/screens/notifications_screen.dart';
@@ -26,10 +28,14 @@ import 'package:flutterquiz/ui/screens/onboarding_screen.dart';
 import 'package:flutterquiz/ui/screens/profile/create_or_edit_profile_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/bookmark_quiz_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/category_screen.dart';
+import 'package:flutterquiz/ui/screens/quiz/category_screencourse.dart';
+
 import 'package:flutterquiz/ui/screens/quiz/contest_leaderboard_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/contest_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/fun_and_learn_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/fun_and_learn_title_screen.dart';
+import 'package:flutterquiz/ui/screens/quiz/fun_and_learn_title_screencourse.dart';
+
 import 'package:flutterquiz/ui/screens/quiz/guess_the_word_quiz_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/levels_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/multi_match/screens/multi_match_quiz_screen.dart';
@@ -47,6 +53,10 @@ import 'package:flutterquiz/ui/screens/rewards/rewards_screen.dart';
 import 'package:flutterquiz/ui/screens/splash_screen.dart';
 import 'package:flutterquiz/ui/screens/statistics_screen.dart';
 
+import 'package:flutterquiz/ui/screens/quiz/treat_guide_screen.dart';
+import 'package:flutterquiz/ui/screens/quiz/saudi_index.dart';
+import 'package:flutterquiz/ui/screens/quiz/dose_calculator_screen.dart';
+
 final globalNavigator = GlobalKey<NavigatorState>();
 final BuildContext globalCtx = globalNavigator.currentContext!;
 
@@ -63,6 +73,10 @@ class Routes {
   static const multiMatchReviewScreen = '/multiMatchReviewScreen';
   static const subcategoryAndLevel = '/subcategoryAndLevel';
   static const subCategory = '/subCategory';
+   static const treatGuide = '/treatGuide';
+    static const categoryCourse = '/categoryCourse';
+  static const doseCalculator = '/doseCalculator';
+
 
   static const referAndEarn = '/referAndEarn';
   static const notification = '/notification';
@@ -89,6 +103,7 @@ class Routes {
   static const contest = '/contest';
   static const contestLeaderboard = '/contestLeaderboard';
   static const funAndLearnTitle = '/funAndLearnTitle';
+  static const funAndLearnTitlecourse = '/funAndLearnTitlecourse';
   static const funAndLearn = 'funAndLearn';
   static const guessTheWord = '/guessTheWord';
   static const appSettings = '/appSettings';
@@ -103,6 +118,7 @@ class Routes {
   static const wallet = '/wallet';
   static const randomBattle = '/randomBattle';
   static const languageSelect = '/language-select';
+  static const saudiIndex = '/saudiIndex';
 
   static String currentRoute = splash;
 
@@ -160,6 +176,7 @@ class Routes {
         return SelfChallengeQuestionsScreen.route(rs);
       case category:
         return CategoryScreen.route(rs);
+      
       case bookmark:
         return BookmarkScreen.route();
       case bookmarkQuiz:
@@ -170,6 +187,9 @@ class Routes {
         return NotificationScreen.route(rs);
       case funAndLearnTitle:
         return FunAndLearnTitleScreen.route(rs);
+      case funAndLearnTitlecourse:
+        return FunAndLearnTitleScreencourse.route(rs);
+        
       case funAndLearn:
         return FunAndLearnScreen.route(rs);
       case multiUserBattleRoomQuiz:
@@ -190,6 +210,15 @@ class Routes {
         return LevelsScreen.route(rs);
       case coinHistory:
         return CoinHistoryScreen.route();
+      case treatGuide:
+        return TreatGuidescreen.route(rs);
+      case saudiIndex:
+        return SaudiIndex.route(rs);  
+        case categoryCourse:
+        return CategoryScreenCourse.route(rs);
+      case doseCalculator:
+        return CupertinoPageRoute(builder: (_) => const DoseCalculatorScreen());
+        
       case aboutApp:
         return AboutAppScreen.route();
       case subCategory:
