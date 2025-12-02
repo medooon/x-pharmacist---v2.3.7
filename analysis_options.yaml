@@ -10,6 +10,9 @@ linter:
     lines_longer_than_80_chars: false
 
 analyzer:
+
+  enable-experiment:
+    - dot-shorthands
   plugins:
     - dart_code_metrics
   errors:
