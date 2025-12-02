@@ -27,6 +27,7 @@ import 'package:flutterquiz/features/quiz/models/quiz_type.dart';
 import 'package:flutterquiz/features/system_config/cubits/system_config_cubit.dart';
 import 'package:flutterquiz/ui/screens/battle/create_or_join_screen.dart';
 import 'package:flutterquiz/ui/screens/home/widgets/all.dart';
+import 'package:flutterquiz/ui/screens/home/widgets/new_home_content.dart';
 import 'package:flutterquiz/ui/screens/profile/create_or_edit_profile_screen.dart';
 import 'package:flutterquiz/ui/screens/quiz/category_screen.dart';
 import 'package:flutterquiz/ui/widgets/all.dart';
@@ -955,6 +956,136 @@ class HomeScreenState extends State<HomeScreen>
     );
   }
 
+  Widget _buildKsaDrugIndexCard() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: hzMargin, vertical: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(Routes.saudiIndex);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xFFFF6BB6),
+                Color(0xFF9D5CFF),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                offset: Offset(0, 5),
+                blurRadius: 5,
+                color: Colors.black12,
+              ),
+            ],
+          ),
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Ksa Drug Index',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeights.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Browse comprehensive drug database',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeights.regular,
+                        color: Colors.white.withValues(alpha: 0.9),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDoseCalculatorCard() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: hzMargin, vertical: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(Routes.doseCalculator);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xFFFF6BB6),
+                Color(0xFF9D5CFF),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                offset: Offset(0, 5),
+                blurRadius: 5,
+                color: Colors.black12,
+              ),
+            ],
+          ),
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Dose Calculator',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeights.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Calculate accurate medication dosages',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeights.regular,
+                        color: Colors.white.withValues(alpha: 0.9),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   String _userRank = '0';
   String _userCoins = '0';
   String _userScore = '0';
@@ -1009,6 +1140,9 @@ class HomeScreenState extends State<HomeScreen>
                             userScore: _userScore,
                           ),
                           const SizedBox(height: 16),
+                          NewHomeContent(),
+                          const SizedBox(height: 16),
+
                           if (!_isGuest &&
                               _sysConfigCubit.isAdsEnable &&
                               _sysConfigCubit.isDailyAdsEnabled) ...[
