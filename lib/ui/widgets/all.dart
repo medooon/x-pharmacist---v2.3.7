@@ -6,4 +6,5 @@ export 'custom_rounded_button.dart';
 export 'error_container.dart';
 export 'login_dialog.dart';
 export 'premium_category_access_badge.dart';
+export 'radio_group.dart';
 export 'unlock_premium_category_dialog.dart';

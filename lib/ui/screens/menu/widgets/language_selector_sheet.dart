@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutterquiz/core/core.dart';
 import 'package:flutterquiz/ui/widgets/custom_rounded_button.dart';
+import 'package:flutterquiz/ui/widgets/radio_group.dart';
 import 'package:flutterquiz/utils/extensions.dart';
 import 'package:flutterquiz/utils/ui_utils.dart';
 
@@ -91,21 +92,28 @@ class _LanguageSelectorWidget extends StatelessWidget {
                                 : colorScheme.onTertiary.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: RadioListTile<String>(
-                            toggleable: true,
-                            activeColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            value: supportedLanguage.name,
-                            title: Text(
-                              supportedLanguage.title,
-                              style: textStyle.copyWith(
-                                color: selected
-                                    ? Colors.white
-                                    : colorScheme.onTertiary,
-                              ),
-                            ),
+                          child: Builder(
+                            builder: (context) {
+                              final scope = RadioGroupScope.of<String>(context);
+                              return RadioListTile<String>(
+                                toggleable: true,
+                                groupValue: scope?.groupValue,
+                                onChanged: scope?.onChanged,
+                                activeColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                value: supportedLanguage.name,
+                                title: Text(
+                                  supportedLanguage.title,
+                                  style: textStyle.copyWith(
+                                    color: selected
+                                        ? Colors.white
+                                        : colorScheme.onTertiary,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         );
                       },

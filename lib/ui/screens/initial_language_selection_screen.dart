@@ -66,20 +66,27 @@ class _InitialLanguageSelectionScreenState
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: RadioListTile<String>(
-                      toggleable: true,
-                      activeColor: currLang.name == language.name
-                          ? Theme.of(context).primaryColor
-                          : Colors.white,
-                      title: Text(
-                        language.title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Theme.of(context).colorScheme.onTertiary,
-                        ),
-                      ),
-                      value: language.name,
+                    child: Builder(
+                      builder: (context) {
+                        final scope = RadioGroupScope.of<String>(context);
+                        return RadioListTile<String>(
+                          toggleable: true,
+                          groupValue: scope?.groupValue,
+                          onChanged: scope?.onChanged,
+                          activeColor: currLang.name == language.name
+                              ? Theme.of(context).primaryColor
+                              : Colors.white,
+                          title: Text(
+                            language.title,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Theme.of(context).colorScheme.onTertiary,
+                            ),
+                          ),
+                          value: language.name,
+                        );
+                      },
                     ),
                   );
                 },

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterquiz/core/core.dart';
 import 'package:flutterquiz/ui/widgets/custom_rounded_button.dart';
+import 'package:flutterquiz/ui/widgets/radio_group.dart';
 import 'package:flutterquiz/utils/extensions.dart';
 import 'package:flutterquiz/utils/ui_utils.dart';
 
@@ -73,45 +74,52 @@ class _ThemeSelectorWidget extends StatelessWidget {
                               : colorScheme.onTertiary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: RadioListTile<Brightness>(
-                          toggleable: true,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          tileColor: colorScheme.onTertiary.withValues(
-                            alpha: 0.2,
-                          ),
-                          value: Brightness.light,
-                          activeColor: Colors.white,
-                          title: Text(
-                            context.tr('lightTheme')!,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              color: currTheme == Brightness.light
-                                  ? Colors.white
-                                  : colorScheme.onTertiary,
-                            ),
-                          ),
-                          secondary: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: currTheme == Brightness.light
-                                    ? Colors.white
-                                    : colorScheme.onTertiary.withValues(
-                                        alpha: 0.2,
-                                      ),
+                        child: Builder(
+                          builder: (context) {
+                            final scope = RadioGroupScope.of<Brightness>(context);
+                            return RadioListTile<Brightness>(
+                              toggleable: true,
+                              groupValue: scope?.groupValue,
+                              onChanged: scope?.onChanged,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            padding: const EdgeInsets.all(2),
-                            child: SvgPicture.asset(
-                              Assets.day,
-                              width: 76,
-                              height: 28,
-                            ),
-                          ),
-                          controlAffinity: ListTileControlAffinity.leading,
+                              tileColor: colorScheme.onTertiary.withValues(
+                                alpha: 0.2,
+                              ),
+                              value: Brightness.light,
+                              activeColor: Colors.white,
+                              title: Text(
+                                context.tr('lightTheme')!,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                  color: currTheme == Brightness.light
+                                      ? Colors.white
+                                      : colorScheme.onTertiary,
+                                ),
+                              ),
+                              secondary: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: currTheme == Brightness.light
+                                        ? Colors.white
+                                        : colorScheme.onTertiary.withValues(
+                                            alpha: 0.2,
+                                          ),
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(2),
+                                child: SvgPicture.asset(
+                                  Assets.day,
+                                  width: 76,
+                                  height: 28,
+                                ),
+                              ),
+                              controlAffinity: ListTileControlAffinity.leading,
+                            );
+                          },
                         ),
                       ),
                       SizedBox(height: size.height * 0.02),
@@ -122,39 +130,46 @@ class _ThemeSelectorWidget extends StatelessWidget {
                               : colorScheme.onTertiary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: RadioListTile<Brightness>(
-                          toggleable: true,
-                          value: Brightness.dark,
-                          activeColor: Colors.white,
-                          title: Text(
-                            context.tr('darkTheme')!,
-                            style: TextStyle(
-                              fontWeight: FontWeights.medium,
-                              fontSize: 18,
-                              color: currTheme == Brightness.dark
-                                  ? Colors.white
-                                  : colorScheme.onTertiary,
-                            ),
-                          ),
-                          secondary: Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: currTheme == Brightness.dark
-                                    ? Colors.white
-                                    : colorScheme.onTertiary.withValues(
-                                        alpha: 0.2,
-                                      ),
+                        child: Builder(
+                          builder: (context) {
+                            final scope = RadioGroupScope.of<Brightness>(context);
+                            return RadioListTile<Brightness>(
+                              toggleable: true,
+                              groupValue: scope?.groupValue,
+                              onChanged: scope?.onChanged,
+                              value: Brightness.dark,
+                              activeColor: Colors.white,
+                              title: Text(
+                                context.tr('darkTheme')!,
+                                style: TextStyle(
+                                  fontWeight: FontWeights.medium,
+                                  fontSize: 18,
+                                  color: currTheme == Brightness.dark
+                                      ? Colors.white
+                                      : colorScheme.onTertiary,
+                                ),
                               ),
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            padding: const EdgeInsets.all(2),
-                            child: SvgPicture.asset(
-                              Assets.night,
-                              width: 76,
-                              height: 28,
-                            ),
-                          ),
-                          controlAffinity: ListTileControlAffinity.leading,
+                              secondary: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: currTheme == Brightness.dark
+                                        ? Colors.white
+                                        : colorScheme.onTertiary.withValues(
+                                            alpha: 0.2,
+                                          ),
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                padding: const EdgeInsets.all(2),
+                                child: SvgPicture.asset(
+                                  Assets.night,
+                                  width: 76,
+                                  height: 28,
+                                ),
+                              ),
+                              controlAffinity: ListTileControlAffinity.leading,
+                            );
+                          },
                         ),
                       ),
                     ],

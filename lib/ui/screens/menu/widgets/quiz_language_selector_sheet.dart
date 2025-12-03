@@ -4,6 +4,7 @@ import 'package:flutterquiz/core/core.dart';
 import 'package:flutterquiz/features/quiz/cubits/contest_cubit.dart';
 import 'package:flutterquiz/features/system_config/cubits/system_config_cubit.dart';
 import 'package:flutterquiz/ui/widgets/custom_rounded_button.dart';
+import 'package:flutterquiz/ui/widgets/radio_group.dart';
 import 'package:flutterquiz/utils/extensions.dart';
 import 'package:flutterquiz/utils/ui_utils.dart';
 
@@ -88,18 +89,25 @@ class _QuizLanguageSelectorWidget extends StatelessWidget {
                                 : colorScheme.onTertiary.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: RadioListTile(
-                            toggleable: true,
-                            activeColor: Colors.white,
-                            value: languageId,
-                            title: Text(
-                              supportedLanguage.language,
-                              style: textStyle.copyWith(
-                                color: currLangId == languageId
-                                    ? Colors.white
-                                    : colorScheme.onTertiary,
-                              ),
-                            ),
+                          child: Builder(
+                            builder: (context) {
+                              final scope = RadioGroupScope.of<String>(context);
+                              return RadioListTile<String>(
+                                toggleable: true,
+                                groupValue: scope?.groupValue,
+                                onChanged: scope?.onChanged,
+                                activeColor: Colors.white,
+                                value: languageId,
+                                title: Text(
+                                  supportedLanguage.language,
+                                  style: textStyle.copyWith(
+                                    color: currLangId == languageId
+                                        ? Colors.white
+                                        : colorScheme.onTertiary,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         );
                       },
