@@ -1,0 +1,267 @@
+Building Android
+6m 20s
+
+
+
+
+
+== Building for Android ==
+
+> flutter build apk --release
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 47.0.0 (92.0.0 available)
+  _flutterfire_internals 1.3.62 (1.3.64 available)
+  analyzer 4.7.0 (9.0.0 available)
+  archive 3.6.1 (4.0.7 available)
+  audio_session 0.1.25 (0.2.2 available)
+  bloc 9.0.0 (9.1.0 available)
+  build 2.4.1 (4.0.3 available)
+  build_config 1.1.2 (1.2.0 available)
+  build_resolvers 2.0.10 (3.0.4 available)
+  build_runner 2.4.13 (2.10.4 available)
+  build_runner_core 7.2.10 (9.3.2 available)
+  characters 1.4.0 (1.4.1 available)
+  cloud_firestore 6.0.2 (6.1.0 available)
+  cloud_firestore_platform_interface 7.0.2 (7.0.4 available)
+  cloud_firestore_web 5.0.2 (5.1.0 available)
+  connectivity_plus 6.1.5 (7.0.0 available)
+  country_code_picker 3.4.0 (3.4.1 available)
+  cross_file 0.3.4+2 (0.3.5+1 available)
+  crypto 3.0.6 (3.0.7 available)
+  dart_style 2.2.4 (3.1.3 available)
+  excel 2.1.0 (4.0.6 available)
+  file_selector_linux 0.9.3+2 (0.9.4 available)
+  file_selector_macos 0.9.4+4 (0.9.5 available)
+  file_selector_platform_interface 2.6.2 (2.7.0 available)
+  file_selector_windows 0.9.3+4 (0.9.3+5 available)
+  firebase_analytics 12.0.2 (12.0.4 available)
+  firebase_analytics_platform_interface 5.0.2 (5.0.4 available)
+  firebase_analytics_web 0.6.0+2 (0.6.1 available)
+  firebase_auth 6.1.0 (6.1.2 available)
+  firebase_auth_platform_interface 8.1.2 (8.1.4 available)
+  firebase_auth_web 6.0.3 (6.1.0 available)
+  firebase_core 4.1.1 (4.2.1 available)
+  firebase_core_platform_interface 6.0.1 (6.0.2 available)
+  firebase_core_web 3.1.1 (3.3.0 available)
+  firebase_messaging 16.0.2 (16.0.4 available)
+  firebase_messaging_platform_interface 4.7.2 (4.7.4 available)
+  firebase_messaging_web 4.0.2 (4.1.0 available)
+  flutter_local_notifications 19.4.2 (19.5.0 available)
+  flutter_plugin_android_lifecycle 2.0.30 (2.0.33 available)
+  flutter_svg 2.2.1 (2.2.3 available)
+  flutter_tex 4.0.9 (5.1.10 available)
+  flutter_timezone 5.0.0 (5.0.1 available)
+  google_fonts 6.3.2 (6.3.3 available)
+  google_sign_in_android 7.1.0 (7.2.7 available)
+  google_sign_in_ios 6.2.1 (6.2.4 available)
+  hive_generator 1.1.3 (2.0.1 available)
+  image 4.3.0 (4.5.4 available)
+  image_picker 1.2.0 (1.2.1 available)
+  image_picker_android 0.8.13+3 (0.8.13+10 available)
+  image_picker_for_web 3.1.0 (3.1.1 available)
+  image_picker_ios 0.8.13 (0.8.13+2 available)
+  image_picker_macos 0.2.2 (0.2.2+1 available)
+  image_picker_platform_interface 2.11.0 (2.11.1 available)
+  in_app_purchase_android 0.4.0+4 (0.4.0+8 available)
+  ironsource_mediation 3.2.0 (discontinued replaced by unity_levelplay_mediation)
+  js 0.6.7 (0.7.2 available)
+  lottie 3.3.0 (3.3.2 available)
+  matcher 0.12.17 (0.12.18 available)
+  material_color_utilities 0.11.1 (0.13.0 available)
+  mime 1.0.6 (2.0.0 available)
+  path_provider_android 2.2.18 (2.2.22 available)
+  path_provider_foundation 2.4.2 (2.5.1 available)
+  pointycastle 3.9.1 (4.0.0 available)
+  share_plus 12.0.0 (12.0.1 available)
+  shelf_web_socket 2.0.1 (3.0.0 available)
+  source_gen 1.2.6 (4.1.1 available)
+  source_helper 1.3.3 (1.3.9 available)
+  test_api 0.7.7 (0.7.8 available)
+  unity_ads_plugin 0.3.27 (0.3.28 available)
+  url_launcher_android 6.3.22 (6.3.28 available)
+  url_launcher_ios 6.3.4 (6.3.6 available)
+  url_launcher_linux 3.2.1 (3.2.2 available)
+  url_launcher_macos 3.2.3 (3.2.5 available)
+  url_launcher_windows 3.1.4 (3.1.5 available)
+  uuid 4.5.1 (4.5.2 available)
+  video_player 2.10.0 (2.10.1 available)
+  video_player_android 2.8.13 (2.8.22 available)
+  video_player_avfoundation 2.8.4 (2.8.8 available)
+  video_player_platform_interface 6.4.0 (6.6.0 available)
+  webview_flutter_android 4.10.2 (4.10.10 available)
+! webview_flutter_plus 0.4.7 (overridden) (0.4.19 available)
+  webview_flutter_wkwebview 3.23.1 (3.23.4 available)
+  win32 5.14.0 (5.15.0 available)
+Got dependencies!
+1 package is discontinued.
+82 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleRelease'...                        
+Checking the license for package NDK (Side by side) 29.0.14033849 in /usr/local/share/android-sdk/licenses
+License for package NDK (Side by side) 29.0.14033849 accepted.
+Preparing "Install NDK (Side by side) 29.0.14033849 v.29.0.14033849 rc4".
+"Install NDK (Side by side) 29.0.14033849 v.29.0.14033849 rc4" ready.
+Installing NDK (Side by side) 29.0.14033849 in /usr/local/share/android-sdk/ndk/29.0.14033849
+"Install NDK (Side by side) 29.0.14033849 v.29.0.14033849 rc4" complete.
+"Install NDK (Side by side) 29.0.14033849 v.29.0.14033849 rc4" finished.
+Checking the license for package Android SDK Build-Tools 34 in /usr/local/share/android-sdk/licenses
+License for package Android SDK Build-Tools 34 accepted.
+Preparing "Install Android SDK Build-Tools 34 v.34.0.0".
+"Install Android SDK Build-Tools 34 v.34.0.0" ready.
+Installing Android SDK Build-Tools 34 in /usr/local/share/android-sdk/build-tools/34.0.0
+"Install Android SDK Build-Tools 34 v.34.0.0" complete.
+"Install Android SDK Build-Tools 34 v.34.0.0" finished.
+lib/features/quiz/models/comprehension.dart:51:18: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+    contentType: .text,
+                 ^
+lib/features/auth/models/auth_providers_enum.dart:9:7: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+      .values.firstWhere((e) => e.toString() == v);
+      ^
+lib/ui/screens/home/home_screen.dart:1247:40: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                    mainAxisAlignment: .center,
+                                       ^
+lib/ui/screens/home/home_screen.dart:1248:35: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                    mainAxisSize: .min,
+                                  ^
+lib/ui/screens/home/home_screen.dart:1296:49: Error: Expected an identifier, but got ','.
+Try inserting an identifier before ','.
+                            fit: BoxFit.contain,,
+                                                ^
+lib/ui/screens/home/home_screen.dart:1291:33: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+                        : QImage(
+                                ^
+lib/commons/widgets/custom_image.dart:7:9: Context: Found this candidate, but the arguments don't match.
+  const QImage({
+        ^^^^^^
+lib/ui/screens/home/home_screen.dart:1317:45: Error: Expected an identifier, but got ','.
+Try inserting an identifier before ','.
+                        fit: BoxFit.contain,,
+                                            ^
+lib/ui/screens/home/home_screen.dart:1312:36: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+                      child: QImage(
+                                   ^
+lib/commons/widgets/custom_image.dart:7:9: Context: Found this candidate, but the arguments don't match.
+  const QImage({
+        ^^^^^^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:78:43: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                      crossAxisAlignment: .stretch,
+                                          ^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:79:37: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                      mainAxisSize: .min,
+                                    ^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:113:48: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                      alignment: iconOnRight ? .bottomRight : .bottomLeft,
+                                               ^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:113:63: Error: This requires the experimental 'dot-shorthands' language feature to be enabled.
+Try passing the '--enable-experiment=dot-shorthands' command line option.
+                      alignment: iconOnRight ? .bottomRight : .bottomLeft,
+                                                              ^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:130:47: Error: Expected an identifier, but got ','.
+Try inserting an identifier before ','.
+                          fit: BoxFit.contain,,
+                                              ^
+lib/ui/screens/home/widgets/quiz_grid_card.dart:127:38: Error: Too many positional arguments: 0 allowed, but 1 found.
+Try removing the extra positional arguments.
+                        child: QImage(
+                                     ^
+lib/commons/widgets/custom_image.dart:7:9: Context: Found this candidate, but the arguments don't match.
+  const QImage({
+        ^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildRelease'.
+> Process 'command '/Users/builder/programs/flutter/bin/flutter'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 16s
+Running Gradle task 'assembleRelease'...                          377.4s
+Gradle task assembleRelease failed with exit code 1
+
+
+Build failed :|
+Failed to build for Android
+
+Applications
+Builds
+OTA Updates
+NEW
+App Preview
+Teams
+Billing
+All systems operational
+
+User preferences
+
+Log out
+x-pharmacist---v2.3.7
+x-pharmacist---v2.3.7
+github.com/medooon/x-pharmacist---v2.3.7
+
+
+Start new build
+Build overview
+ID:
+692f47e87ec700b438071f2a
+Please provide this ID when you contact our support team
+Index:
+5
+Status:
+failed
+Workflow:
+Default Workflow
+Started by:
+ehabmohmed429@gmail.com
+
+ehabmohmed429@gmail.com
+Started:
+20 hours ago
+Dec 2nd, 2025 at 22:11 EET
+Duration:
+8m 18s
+Machine:
+Mac mini M2
+Branch:
+main
+Commit:
+122ca69
+Current configuration
+Flutter tag:
+3.38.3
+Mode:
+release
+Build for:
+Android
+Click on the build steps for details.
+Preparing build machine
+21s
+Fetching app sources
+2s
+Installing SDKs
+1m 7s
+Installing dependencies
+26s
+Publishing
+< 1s
+Cleaning up
+< 1s
+Failed to build for Android
+
