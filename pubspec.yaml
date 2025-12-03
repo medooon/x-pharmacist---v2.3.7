@@ -12,7 +12,7 @@ version: 2.3.6+60
 
 environment:
 
-  sdk: ">=3.8.1 <4.0.0"
+  sdk: ">=3.8.0 <4.0.0"
 
 
 
@@ -136,7 +136,7 @@ dev_dependencies:
 
   flutter_launcher_icons: ^0.14.4
 
-  very_good_analysis: ^10.0.0
+  # very_good_analysis: ^10.0.0  # Commented out - requires Dart SDK >=3.9.0
 
   build_runner: ^2.3.3
 
