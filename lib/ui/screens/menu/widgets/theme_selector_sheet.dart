@@ -59,7 +59,7 @@ class _ThemeSelectorWidget extends StatelessWidget {
                   thickness: 1,
                 ),
                 SizedBox(height: size.height * 0.02),
-                RadioGroup<Brightness>(
+                QuizRadioGroup<Brightness>(
                   groupValue: currTheme,
                   onChanged: (v) {
                     currTheme = v;
@@ -76,7 +76,7 @@ class _ThemeSelectorWidget extends StatelessWidget {
                         ),
                         child: Builder(
                           builder: (context) {
-                            final scope = RadioGroupScope.of<Brightness>(context);
+                            final scope = QuizRadioGroupScope.of<Brightness>(context);
                             return RadioListTile<Brightness>(
                               toggleable: true,
                               groupValue: scope?.groupValue,
@@ -132,7 +132,7 @@ class _ThemeSelectorWidget extends StatelessWidget {
                         ),
                         child: Builder(
                           builder: (context) {
-                            final scope = RadioGroupScope.of<Brightness>(context);
+                            final scope = QuizRadioGroupScope.of<Brightness>(context);
                             return RadioListTile<Brightness>(
                               toggleable: true,
                               groupValue: scope?.groupValue,

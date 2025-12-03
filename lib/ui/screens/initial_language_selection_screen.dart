@@ -37,7 +37,7 @@ class _InitialLanguageSelectionScreenState
               vertical: context.height * UiUtils.vtMarginPct,
               horizontal: context.width * UiUtils.hzMarginPct,
             ),
-            child: RadioGroup<String>(
+            child: QuizRadioGroup<String>(
               groupValue: currLang.name,
               onChanged: (name) async {
                 if (name == null) return;
@@ -68,7 +68,7 @@ class _InitialLanguageSelectionScreenState
                     ),
                     child: Builder(
                       builder: (context) {
-                        final scope = RadioGroupScope.of<String>(context);
+                        final scope = QuizRadioGroupScope.of<String>(context);
                         return RadioListTile<String>(
                           toggleable: true,
                           groupValue: scope?.groupValue,

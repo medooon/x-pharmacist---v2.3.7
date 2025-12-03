@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RadioGroupScope<T> extends InheritedWidget {
-  const RadioGroupScope({
+class QuizRadioGroupScope<T> extends InheritedWidget {
+  const QuizRadioGroupScope({
     required this.groupValue,
     required this.onChanged,
     required super.child,
@@ -11,18 +11,18 @@ class RadioGroupScope<T> extends InheritedWidget {
   final T? groupValue;
   final ValueChanged<T?>? onChanged;
 
-  static RadioGroupScope<T>? of<T>(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<RadioGroupScope<T>>();
+  static QuizRadioGroupScope<T>? of<T>(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<QuizRadioGroupScope<T>>();
   }
 
   @override
-  bool updateShouldNotify(RadioGroupScope<T> oldWidget) {
+  bool updateShouldNotify(QuizRadioGroupScope<T> oldWidget) {
     return groupValue != oldWidget.groupValue || onChanged != oldWidget.onChanged;
   }
 }
 
-class RadioGroup<T> extends StatelessWidget {
-  const RadioGroup({
+class QuizRadioGroup<T> extends StatelessWidget {
+  const QuizRadioGroup({
     required this.groupValue,
     required this.onChanged,
     required this.child,
@@ -35,7 +35,7 @@ class RadioGroup<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RadioGroupScope<T>(
+    return QuizRadioGroupScope<T>(
       groupValue: groupValue,
       onChanged: onChanged,
       child: child,

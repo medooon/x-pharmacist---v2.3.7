@@ -62,7 +62,7 @@ class _LanguageSelectorWidget extends StatelessWidget {
                     minHeight: size.height * .2,
                     maxHeight: size.height * .4,
                   ),
-                  child: RadioGroup<String>(
+                  child: QuizRadioGroup<String>(
                     groupValue: currLang.name,
                     onChanged: (name) async {
                       if (name == null) return;
@@ -94,7 +94,7 @@ class _LanguageSelectorWidget extends StatelessWidget {
                           ),
                           child: Builder(
                             builder: (context) {
-                              final scope = RadioGroupScope.of<String>(context);
+                              final scope = QuizRadioGroupScope.of<String>(context);
                               return RadioListTile<String>(
                                 toggleable: true,
                                 groupValue: scope?.groupValue,
