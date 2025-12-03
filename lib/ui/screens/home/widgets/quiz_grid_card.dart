@@ -75,8 +75,8 @@ class QuizGridCard extends StatelessWidget {
                 child: Stack(
                   children: [
                     Column(
-                      crossAxisAlignment: .stretch,
-                      mainAxisSize: .min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         /// Title
                         Text(
@@ -110,7 +110,7 @@ class QuizGridCard extends StatelessWidget {
 
                     /// Svg Icon
                     Align(
-                      alignment: iconOnRight ? .bottomRight : .bottomLeft,
+                      alignment: iconOnRight ? Alignment.bottomRight : Alignment.bottomLeft,
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.transparent,

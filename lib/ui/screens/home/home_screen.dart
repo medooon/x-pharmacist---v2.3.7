@@ -1244,8 +1244,8 @@ class HomeScreenState extends State<HomeScreen>
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: .center,
-                    mainAxisSize: .min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         _userName,
