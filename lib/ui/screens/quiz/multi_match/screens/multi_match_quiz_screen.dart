@@ -733,7 +733,7 @@ class _MultiMatchQuestionsViewState extends State<MultiMatchQuestionsView> {
     );
 
     return Container(
-      transform: Matrix4.identity()..scaleByDouble(scale, scale, scale, 1),
+      transform: Matrix4.identity()..scale(scale, scale, scale),
       transformAlignment: Alignment.center,
       width: context.width * QuizUtils.questionContainerWidthPercentage,
       height:

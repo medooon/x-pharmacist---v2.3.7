@@ -1,4 +1,4 @@
-include: package:very_good_analysis/analysis_options.yaml
+# include: package:very_good_analysis/analysis_options.yaml  # Commented out - package not available with Dart SDK 3.8.0
 
 linter:
   rules:
@@ -13,38 +13,38 @@ analyzer:
 
   enable-experiment:
     - dot-shorthands
-  plugins:
-    - dart_code_metrics
+  # plugins:
+  #   - dart_code_metrics  # Commented out - package not available
   errors:
     file_names: error
 
-dart_code_metrics:
-  extends:
-    - package:dart_code_metrics_presets/all.yaml
-  metrics:
-    cyclomatic-complexity: 20
-    number-of-parameters: 4
-    maximum-nesting-level: 4
-    lines-of-code: 100
-    maintainability-index: 50
-    number-of-methods: 10
-
-  metrics-exclude:
-    - test/**
-  rules:
-    - avoid-dynamic
-    - avoid-passing-async-when-sync-expected
-    - avoid-redundant-async
-    - avoid-unnecessary-type-assertions
-    - avoid-unnecessary-type-casts
-    - avoid-unrelated-type-assertions
-    - avoid-unused-parameters
-    - avoid-nested-conditional-expressions
-    - newline-before-return
-    - no-boolean-literal-compare
-    - no-empty-block
-    - prefer-trailing-comma
-    - prefer-conditional-expressions
-    - no-equal-then-else
-    - prefer-moving-to-variable
-    - prefer-match-file-name
+# dart_code_metrics:
+#   extends:
+#     - package:dart_code_metrics_presets/all.yaml
+#   metrics:
+#     cyclomatic-complexity: 20
+#     number-of-parameters: 4
+#     maximum-nesting-level: 4
+#     lines-of-code: 100
+#     maintainability-index: 50
+#     number-of-methods: 10
+#
+#   metrics-exclude:
+#     - test/**
+#   rules:
+#     - avoid-dynamic
+#     - avoid-passing-async-when-sync-expected
+#     - avoid-redundant-async
+#     - avoid-unnecessary-type-assertions
+#     - avoid-unnecessary-type-casts
+#     - avoid-unrelated-type-assertions
+#     - avoid-unused-parameters
+#     - avoid-nested-conditional-expressions
+#     - newline-before-return
+#     - no-boolean-literal-compare
+#     - no-empty-block
+#     - prefer-trailing-comma
+#     - prefer-conditional-expressions
+#     - no-equal-then-else
+#     - prefer-moving-to-variable
+#     - prefer-match-file-name

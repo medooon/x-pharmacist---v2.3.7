@@ -25,7 +25,7 @@ class _UserFoundMapContainerState extends State<UserFoundMapContainer> {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       transformAlignment: Alignment.center,
-      transform: Matrix4.identity()..scaleByDouble(scale, scale, scale, 1),
+      transform: Matrix4.identity()..scale(scale, scale, scale),
       duration: const Duration(milliseconds: 300),
       child: Image.asset(Assets.mapFinded, fit: BoxFit.cover),
     );

@@ -57,4 +57,13 @@ app.*.map.json
 # FVM Version Cache
 .fvm/
 
+# Flutter web build artifacts
+web/flutter_service_worker.js
+web/flutter.js
+web/index.html.old
+web/version.json
+web/assets/AssetManifest.json
+web/assets/FontManifest.json
+web/assets/NOTICES
+
 CLAUDE.md

@@ -127,7 +127,7 @@ class QuizGridCard extends StatelessWidget {
                         child: QImage(
                           imageUrl: img,
                           color: iconColor,
-                          fit: BoxFit.contain,,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
