@@ -1,7 +1,7 @@
-# Elite Quiz App - Replit Setup
+# X Pharmacist App - Replit Setup
 
 ## Project Overview
-This is a Flutter mobile quiz application (Elite Quiz App) that has been imported from GitHub and adapted for the Replit environment. The app is a comprehensive quiz platform with features including:
+This is a Flutter mobile quiz application (X Pharmacist App) that has been imported from GitHub and adapted for the Replit environment. The app is a comprehensive quiz platform with features including:
 - Multiple quiz modes (battle, group play, daily quiz, exam mode)
 - Firebase integration (Auth, Firestore, Analytics, Messaging)
 - In-app purchases
