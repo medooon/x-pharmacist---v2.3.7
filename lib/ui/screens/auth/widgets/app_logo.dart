@@ -5,8 +5,17 @@ import 'package:flutterquiz/core/constants/assets_constants.dart';
 class AppLogo extends StatelessWidget {
   const AppLogo({super.key});
 
-  @override
+    @override
+        @override
   Widget build(BuildContext context) {
-    return const QImage(imageUrl: Assets.appLogo);
+    return const QImage(
+      imageUrl: Assets.appLogo,
+      height: 66,
+      width: 168,
+    );
   }
 }
+      
+
+
+
