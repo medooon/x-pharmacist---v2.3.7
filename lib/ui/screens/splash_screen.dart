@@ -305,6 +305,8 @@ class _SplashScreenState extends State<SplashScreen>
                               _logoScaleDownAnimation.value,
                           child: QImage(
                             imageUrl: _appLogoPath,
+                            width: 200,
+                            height: 200,
                             fit: BoxFit.contain,
                           ),
                         ),
