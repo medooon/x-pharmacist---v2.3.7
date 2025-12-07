@@ -39,7 +39,7 @@ class _SaudiIndexState extends State<SaudiIndex> {
   @override
   void initState() {
     super.initState();
-    selectedCountry = 'Egypt'; // Set Egypt as default
+    selectedCountry = 'Saudi'; // Set Egypt as default
     loadDrugs();
     searchController.addListener(_search);
   }
