@@ -62,6 +62,7 @@ dependencies:
 dependency_overrides:
   flutter_widget_from_html: 0.16.0
   webview_flutter_plus: 0.4.7
+  archive: ^3.1.0  # Add this line
 
 
 dev_dependencies:
