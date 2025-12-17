@@ -831,13 +831,16 @@ class DrugDetailScreen extends StatelessWidget {
           Text(
             '$label:',
             style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.red,
+              fontSize: 16, 
+              fontWeight: FontWeight.bold, 
+              color: Colors.red
             ),
           ),
           const SizedBox(height: 4),
-          Text(value, style: const TextStyle(fontSize: 16)),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 16),
+          ),
         ],
       ),
     );
@@ -854,19 +857,15 @@ class DrugDetailScreen extends StatelessWidget {
           const Text(
             'Price:',
             style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.red,
+              fontSize: 16, 
+              fontWeight: FontWeight.bold, 
+              color: Colors.red
             ),
           ),
           const SizedBox(height: 4),
           Text(
             '${drug.price.toStringAsFixed(2)} EGP',
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: Colors.green,
-            ),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.green),
           ),
         ],
       ),
@@ -895,6 +894,49 @@ class DrugDetailScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildFormattedDescription(String description) {
+    // Regular expression to find patterns like $word:
+    final RegExp pattern = RegExp(r'\$([^$:]+):');
+    
+    List<TextSpan> spans = [];
+    int lastEnd = 0;
+    
+    for (final Match match in pattern.allMatches(description)) {
+      // Add text before the match
+      if (match.start > lastEnd) {
+        spans.add(TextSpan(
+          text: description.substring(lastEnd, match.start),
+          style: const TextStyle(fontSize: 16, height: 1.5, color: Colors.black),
+        ));
+      }
+      
+      // Add the formatted match (remove $ and make bold green)
+      spans.add(TextSpan(
+        text: '${match.group(1)}:',
+        style: const TextStyle(
+          fontSize: 16,
+          height: 1.5,
+          fontWeight: FontWeight.bold,
+          color: Colors.green,
+        ),
+      ));
+      
+      lastEnd = match.end;
+    }
+    
+    // Add remaining text after the last match
+    if (lastEnd < description.length) {
+      spans.add(TextSpan(
+        text: description.substring(lastEnd),
+        style: const TextStyle(fontSize: 16, height: 1.5, color: Colors.black),
+      ));
+    }
+    
+    return RichText(
+      text: TextSpan(children: spans),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -914,9 +956,9 @@ class DrugDetailScreen extends StatelessWidget {
               Text(
                 drug.tradeName,
                 style: const TextStyle(
-                  fontSize: 24,
+                  fontSize: 24, 
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue,
+                  color: Colors.blue
                 ),
               ),
               const SizedBox(height: 16),
@@ -925,20 +967,12 @@ class DrugDetailScreen extends StatelessWidget {
               if (drug.otc.isNotEmpty || drug.temperature.isNotEmpty)
                 Wrap(
                   children: [
-                    if (drug.otc == 'o')
+                    if (drug.otc == 'o') 
                       _buildStatusChip('OTC', 'Over-the-counter', Colors.green),
-                    if (drug.otc == 'p')
-                      _buildStatusChip(
-                        'Prescription',
-                        'Required',
-                        Colors.orange,
-                      ),
+                    if (drug.otc == 'p') 
+                      _buildStatusChip('Prescription', 'Required', Colors.orange),
                     if (drug.temperature.isNotEmpty)
-                      _buildStatusChip(
-                        'Storage',
-                        drug.temperature,
-                        Colors.blue,
-                      ),
+                      _buildStatusChip('Storage', drug.temperature, Colors.blue),
                   ],
                 ),
 
@@ -960,9 +994,9 @@ class DrugDetailScreen extends StatelessWidget {
                 const Text(
                   'Description:',
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
+                    fontSize: 18, 
+                    fontWeight: FontWeight.bold, 
+                    color: Colors.red
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -974,10 +1008,7 @@ class DrugDetailScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: Colors.grey[300]!),
                   ),
-                  child: Text(
-                    drug.description,
-                    style: const TextStyle(fontSize: 16, height: 1.5),
-                  ),
+                  child: _buildFormattedDescription(drug.description),
                 ),
               ],
             ],
